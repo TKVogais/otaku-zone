@@ -26,6 +26,12 @@ export function MainNav(): React.JSX.Element {
   const itemRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
 
+  const setItemRef = React.useCallback((label: string) => {
+    return (el: HTMLDivElement | null) => {
+      itemRefs.current[label] = el
+    }
+  }, [])
+
   React.useEffect(() => {
     const activeGenre = genres.find((g) => g.path === pathname)
     const navLeft = navRef.current?.getBoundingClientRect().left || 0
@@ -106,9 +112,7 @@ export function MainNav(): React.JSX.Element {
           color: 'white',
           zIndex: 1201,
         }}
-        onClick={() => {
-          setMobileMenuOpen((open) => !open)
-        }}
+        onClick={() => setMobileMenuOpen((open) => !open)}
         aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         role="button"
         tabIndex={0}
@@ -135,9 +139,7 @@ export function MainNav(): React.JSX.Element {
         {genres.map((genre) => (
           <Link key={genre.label} href={genre.path} passHref>
             <Box
-              ref={(el) => {
-                itemRefs.current[genre.label] = el as HTMLDivElement | null
-              }}
+              ref={setItemRef(genre.label)}
               onMouseEnter={handleMouseEnter}
               sx={{
                 color: 'white',
@@ -188,9 +190,7 @@ export function MainNav(): React.JSX.Element {
             flexDirection: 'column',
             py: 2,
           }}
-          onClick={() => {
-            setMobileMenuOpen(false)
-          }}
+          onClick={() => setMobileMenuOpen(false)}
         >
           {genres.map((genre) => (
             <Link key={genre.label} href={genre.path} passHref>

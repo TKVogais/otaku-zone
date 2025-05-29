@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import {
   Box,
   Grid,
@@ -21,10 +21,10 @@ import {
   UserCircle,
   Chat,
   Clock
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react'
 import { usePost } from '@/contexts/posts-context'
 
-interface Card{
+interface Card {
   id: number
   imageUrl: string
   genre: string
@@ -49,10 +49,9 @@ const genreIcons: Record<string, JSX.Element> = {
   HORROR: <Ghost size={14} weight="bold" />,
   FANTASY: <Star size={14} weight="bold" />,
   SEINEN: <UserCircle size={14} weight="bold" />
-};
+}
 
-
-function EmptyFeedMessage() {
+function EmptyFeedMessage(): JSX.Element {
   return (
     <Box
       sx={{
@@ -67,33 +66,30 @@ function EmptyFeedMessage() {
         textAlign: 'center'
       }}
     >
-      {`\nNenhum post encontrado para este gênero 😢`}
+      {'\nNenhum post encontrado para este gênero 😢'}
     </Box>
-  );
+  )
 }
 
-
-export function AnimeFeed({ genre }: { genre?: string }) {
-  const [page, setPage] = React.useState(1)
-  const {cards, setActivePostById } = usePost()
+export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
+  const [page, setPage] = useState<number>(1)
+  const { cards, setActivePostById } = usePost()
   const cardsPerPage = 6
 
-  const handleChange = (_: React.ChangeEvent<unknown>, value: number) => {
+  const handleChange = (_: React.ChangeEvent<unknown>, value: number): void => {
     setPage(value)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const handleImgError = (ev: React.SyntheticEvent<HTMLImageElement>) => {
+  const handleImgError = (ev: React.SyntheticEvent<HTMLImageElement>): void => {
     ev.currentTarget.src = DEFAULT_IMAGE_URL
   }
 
-  const genero = (genre || "").replace(/-/g, ' ')
-
+  const genero = (genre || '').replace(/-/g, ' ')
   const Cards: Card[] = (genero
-    ? cards?.filter(
-      (post: { genre: string }) =>
+    ? cards?.filter((post: { genre: string }) =>
         post.genre.toLowerCase() === genero.toLowerCase()
-    )
+      )
     : cards) ?? []
 
   const totalPages = Math.ceil(Cards.length / cardsPerPage)
@@ -103,13 +99,13 @@ export function AnimeFeed({ genre }: { genre?: string }) {
   )
 
   if (Cards.length === 0) {
-    return <EmptyFeedMessage  />
+    return <EmptyFeedMessage />
   }
 
   return (
     <Box sx={{ maxWidth: 1152, mx: 'auto', mt: '80px', px: 2 }}>
       <Grid container spacing={4} justifyContent="center">
-        {currentCards.map(card => {
+        {currentCards.map((card): JSX.Element => {
           const date =
             typeof card.postedAt === 'string'
               ? new Date(card.postedAt)
@@ -118,7 +114,9 @@ export function AnimeFeed({ genre }: { genre?: string }) {
           return (
             <Grid key={card.id} item sx={{ width: 360 }}>
               <Box
-                onClick={() => setActivePostById(card.id)}
+                onClick={() => {
+                  setActivePostById(card.id)
+                }}
                 sx={{
                   cursor: 'pointer',
                   border: 1,
