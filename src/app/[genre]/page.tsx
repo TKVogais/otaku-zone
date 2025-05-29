@@ -13,7 +13,7 @@ interface GenrePageProps {
 export default function GenrePage({ params }: GenrePageProps): JSX.Element {
   useEffect(() => {
     const genre = decodeURIComponent(params.genre).replace(/-/g, ' ')
-    document.title = `Otaku Recomenta | ${genre.charAt(0).toUpperCase() + genre.slice(1).toLowerCase()}`
+    document.title = `Otaku Recomenda | ${genre.charAt(0).toUpperCase() + genre.slice(1).toLowerCase()}`
   }, [params.genre])
 
   return <AnimeFeed genre={params.genre} />

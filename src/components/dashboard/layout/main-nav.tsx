@@ -94,7 +94,7 @@ export function MainNav(): React.JSX.Element {
       <Box
         component="img"
         src="/assets/logo_otaku_recomenda.png"
-        alt="Otaku Recomenta Logo"
+        alt="Otaku Recomenda Logo"
         sx={{
           width: { xs: '200px', md: '320px' },
           height: { xs: '50px', md: '80px' },
