@@ -112,7 +112,9 @@ export function MainNav(): React.JSX.Element {
           color: 'white',
           zIndex: 1201,
         }}
-        onClick={() => setMobileMenuOpen((open) => !open)}
+        onClick={() => {
+          setMobileMenuOpen((open) => !open)
+        }}
         aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         role="button"
         tabIndex={0}
@@ -177,6 +179,7 @@ export function MainNav(): React.JSX.Element {
         }}
       />
 
+      {/* eslint-disable-next-line react/jsx-no-leaked-render */}
       {mobileMenuOpen && (
         <Box
           sx={{
@@ -190,7 +193,9 @@ export function MainNav(): React.JSX.Element {
             flexDirection: 'column',
             py: 2,
           }}
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={() => {
+            setMobileMenuOpen(false)
+          }}
         >
           {genres.map((genre) => (
             <Link key={genre.label} href={genre.path} passHref>

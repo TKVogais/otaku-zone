@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Grid,
@@ -40,7 +40,7 @@ const DEFAULT_IMAGE_URL =
 
 const lighterBorder = 'rgba(0, 0, 0, 0.16)'
 
-const genreIcons: Record<string, JSX.Element> = {
+const genreIcons: Record<string, React.ReactElement> = {
   SHOUNEN: <Sword size={14} weight="bold" />,
   SHOJO: <Heart size={14} weight="bold" />,
   ISEKAI: <Globe size={14} weight="bold" />,
@@ -51,7 +51,7 @@ const genreIcons: Record<string, JSX.Element> = {
   SEINEN: <UserCircle size={14} weight="bold" />
 }
 
-function EmptyFeedMessage(): JSX.Element {
+function EmptyFeedMessage(): React.ReactElement {
   return (
     <Box
       sx={{
@@ -71,7 +71,7 @@ function EmptyFeedMessage(): JSX.Element {
   )
 }
 
-export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
+export function AnimeFeed({ genre }: { genre?: string }): React.ReactElement {
   const [page, setPage] = useState<number>(1)
   const { cards, setActivePostById } = usePost()
   const cardsPerPage = 6
@@ -105,7 +105,7 @@ export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
   return (
     <Box sx={{ maxWidth: 1152, mx: 'auto', mt: '80px', px: 2 }}>
       <Grid container spacing={4} justifyContent="center">
-        {currentCards.map((card): JSX.Element => {
+        {currentCards.map((card): React.ReactElement => {
           const date =
             typeof card.postedAt === 'string'
               ? new Date(card.postedAt)
@@ -170,13 +170,7 @@ export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
                   }}
                 >
                   <Tooltip title="Curtidas">
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 0.5
-                      }}
-                    >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                       <Heart weight="fill" size={16} />
                       <Typography variant="caption">
                         {card.likes.toLocaleString()}
@@ -184,13 +178,7 @@ export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
                     </Box>
                   </Tooltip>
                   <Tooltip title="Comentários">
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 0.5
-                      }}
-                    >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                       <Chat size={16} />
                       <Typography variant="caption">
                         {card.comments}
@@ -198,13 +186,7 @@ export function AnimeFeed({ genre }: { genre?: string }): JSX.Element {
                     </Box>
                   </Tooltip>
                   <Tooltip title="Tempo de leitura">
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 0.5
-                      }}
-                    >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                       <Clock size={16} />
                       <Typography variant="caption">
                         {card.readingTime}

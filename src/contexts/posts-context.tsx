@@ -1,34 +1,37 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
-import { PostCard, postCards } from './data/post-card'
-import { useRouter } from 'next/navigation'
-import { Post, postsFeed } from './data/post'
+'use client'
 
-type PostContextType = {
+import React, { createContext, useContext, useState, type ReactNode } from 'react'
+import type { PostCard } from './data/post-card'
+import { postCards } from './data/post-card'
+import type { Post } from './data/post'
+import { postsFeed } from './data/post'
+import { useRouter } from 'next/navigation'
+
+interface PostContextType {
   cards: PostCard[]
   setCards: React.Dispatch<React.SetStateAction<PostCard[]>>
-  posts: any
-  setPosts: React.Dispatch<React.SetStateAction<any>>
+  posts: Post[]
+  setPosts: React.Dispatch<React.SetStateAction<Post[]>>
   activePost: Post | null
   setActivePostById: (id: number) => void
 }
 
 const PostContext = createContext<PostContextType | undefined>(undefined)
 
-export function PostProvider({ children }: { children: ReactNode }) {
+export function PostProvider({ children }: { children: ReactNode }): JSX.Element {
   const [cards, setCards] = useState<PostCard[]>(postCards)
   const [posts, setPosts] = useState<Post[]>(postsFeed)
   const [activePost, setActivePost] = useState<Post | null>(null)
   const router = useRouter()
 
-  const setActivePostById = (id: number) => {
-    const card = cards?.find((card: PostCard) => card.id === id)
-    const post = posts?.find((post: Post) => post.id === id)
+  const setActivePostById = (id: number): void => {
+    const card = cards?.find((card) => card.id === id)
+    const post = posts?.find((post) => post.id === id)
     if (post && card) {
       setActivePost(post)
       router.push(card.path)
     }
   }
-
 
   return (
     <PostContext.Provider
@@ -38,7 +41,7 @@ export function PostProvider({ children }: { children: ReactNode }) {
         posts,
         setPosts,
         activePost,
-        setActivePostById,
+        setActivePostById
       }}
     >
       {children}
