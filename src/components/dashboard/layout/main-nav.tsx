@@ -179,7 +179,7 @@ export function MainNav(): React.JSX.Element {
         }}
       />
 
-      {/* eslint-disable-next-line react/jsx-no-leaked-render */}
+      {/* eslint-disable-next-line react/jsx-no-leaked-render -- o menu mobile é renderizado condicionalmente com base no estado para evitar vazamentos */}
       {mobileMenuOpen && (
         <Box
           sx={{

@@ -6,6 +6,7 @@ import { postCards } from './data/post-card'
 import type { Post } from './data/post'
 import { postsFeed } from './data/post'
 import { useRouter } from 'next/navigation'
+import type { JSX } from 'react'
 
 interface PostContextType {
   cards: PostCard[]
