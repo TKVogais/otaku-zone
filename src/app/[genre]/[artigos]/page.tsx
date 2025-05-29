@@ -75,7 +75,7 @@ export default function InfoArticlePage(): JSX.Element {
   const { activePost } = usePost()
 
   useEffect(() => {
-    document.title = 'Otaku Zone'
+    document.title = 'Otaku Recomenta'
   }, [])
 
   const paperShadow = '0 4px 20px rgba(0,0,0,0.3)'

@@ -32,7 +32,7 @@ export const postsFeed: Post[] = [
     {
         "id": 1,
         "caption": "O Magnífico Mundo de One Piece",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -60,7 +60,7 @@ export const postsFeed: Post[] = [
     {
         "id": 2,
         "caption": "A Alma da Floresta em Somali and the Forest Spirit",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -88,7 +88,7 @@ export const postsFeed: Post[] = [
     , {
         "id": 3,
         "caption": "A Busca pela Verdade em Fullmetal Alchemist: Brotherhood",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -117,7 +117,7 @@ export const postsFeed: Post[] = [
     {
         "id": 4,
         "caption": "A Jornada Ninja de Naruto Uzumaki",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -146,7 +146,7 @@ export const postsFeed: Post[] = [
     {
         "id": 5,
         "caption": "A Doçura de March Comes in Like a Lion",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -175,7 +175,7 @@ export const postsFeed: Post[] = [
     {
         "id": 6,
         "caption": "A Luta pela Liberdade em Attack on Titan",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -204,7 +204,7 @@ export const postsFeed: Post[] = [
     {
         "id": 7,
         "caption": "A Aventura Digital de Digimon Adventure",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -232,7 +232,7 @@ export const postsFeed: Post[] = [
     {
         "id": 8,
         "caption": "A Lâmina que Extermina Demônios: Demon Slayer",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -260,7 +260,7 @@ export const postsFeed: Post[] = [
     {
         "id": 9,
         "caption": "A Aventura Mágica de Fairy Tail",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -288,7 +288,7 @@ export const postsFeed: Post[] = [
     {
         "id": 10,
         "caption": "A Escuridão e o Mistério em Hellsing",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -316,7 +316,7 @@ export const postsFeed: Post[] = [
     {
         "id": 11,
         "caption": "O Herói Careca de One-Punch Man",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -344,7 +344,7 @@ export const postsFeed: Post[] = [
     {
         "id": 12,
         "caption": "A Gangue de Tokyo Revengers",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -372,7 +372,7 @@ export const postsFeed: Post[] = [
     {
         "id": 13,
         "caption": "A Brutalidade de Berserk",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -400,7 +400,7 @@ export const postsFeed: Post[] = [
     {
         "id": 14,
         "caption": "O Mundo Sombrio dos Shinigamis em Bleach",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -427,7 +427,7 @@ export const postsFeed: Post[] = [
     }, {
         "id": 15,
         "caption": "A Ascensão dos Heróis em My Hero Academia",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -455,7 +455,7 @@ export const postsFeed: Post[] = [
     {
         "id": 16,
         "caption": "O Universo de Poder de Dragon Ball",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -483,7 +483,7 @@ export const postsFeed: Post[] = [
     {
         "id": 17,
         "caption": "A Inovação Mecânica em Patlabor",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -510,7 +510,7 @@ export const postsFeed: Post[] = [
     }, {
         "id": 18,
         "caption": "A Jornada de Yona of the Dawn",
-        "publish": "Por Otaku Zone · 27 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 27 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -538,7 +538,7 @@ export const postsFeed: Post[] = [
     {
         "id": 19,
         "caption": "O Mundo de Maldições em Jujutsu Kaisen",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -566,7 +566,7 @@ export const postsFeed: Post[] = [
     {
         "id": 19,
         "caption": "O Mundo de Maldições em Jujutsu Kaisen",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -594,7 +594,7 @@ export const postsFeed: Post[] = [
     {
         "id": 20,
         "caption": "O Mundo de Black Clover",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",
@@ -622,7 +622,7 @@ export const postsFeed: Post[] = [
     {
         "id": 21,
         "caption": "A Busca Incansável em Hunter x Hunter",
-        "publish": "Por Otaku Zone · 24 de Maio de 2025",
+        "publish": "Por Otaku Recomenta · 24 de Maio de 2025",
         "titulo1": "Sinopse",
         "titulo2": "Elementos da Obra",
         "titulo3": "Impacto Cultural e Curiosidades",

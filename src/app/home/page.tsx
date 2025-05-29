@@ -6,7 +6,7 @@ import { AnimeFeed } from '@/components/feed/AnimeFeed'
 
 export default function HomePage(): JSX.Element {
   useEffect(() => {
-    document.title = 'Otaku Zone | Home'
+    document.title = 'Otaku Recomenta | Home'
   }, [])
 
   return <AnimeFeed />
