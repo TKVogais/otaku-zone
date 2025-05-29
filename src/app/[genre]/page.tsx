@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react'
+import type { JSX } from 'react'
 import { AnimeFeed } from '@/components/feed/AnimeFeed'
 
 interface GenrePageProps {
