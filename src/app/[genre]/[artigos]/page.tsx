@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import type { JSX } from 'react'
 import {
   Box,
   Container,
@@ -17,14 +18,16 @@ interface RenderImageOrFallbackProps {
   height?: number
 }
 
-const RenderImageOrFallback = ({
+function RenderImageOrFallback({
   src,
   alt = '',
   height = 400,
-}: RenderImageOrFallbackProps): JSX.Element => {
+}: RenderImageOrFallbackProps): JSX.Element {
   const [error, setError] = useState<boolean>(false)
 
-  const handleError = (): void => setError(true)
+  const handleError = (): void => {
+    setError(true)
+  }
 
   if (error || !src) {
     return (
