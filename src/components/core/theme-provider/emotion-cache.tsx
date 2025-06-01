@@ -1,5 +1,6 @@
 'use client';
 
+import type { JSX } from 'react';
 import * as React from 'react';
 import { useServerInsertedHTML } from 'next/navigation';
 import createCache from '@emotion/cache';
@@ -17,17 +18,16 @@ export interface NextAppDirEmotionCacheProviderProps {
   children: React.ReactNode;
 }
 
-// Adaptado de: https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
 export default function NextAppDirEmotionCacheProvider(
   props: NextAppDirEmotionCacheProviderProps
 ): React.JSX.Element {
   const { options, CacheProvider = DefaultCacheProvider, children } = props;
 
-  const [registry] = React.useState<Registry>(() => {
+  const registry = React.useMemo<Registry>(() => {
     const cache = createCache(options);
     cache.compat = true;
 
-    const prevInsert = cache.insert;
+    const prevInsert = cache.insert.bind(cache);
     let inserted: { name: string; isGlobal: boolean }[] = [];
 
     cache.insert = (...args) => {
@@ -47,48 +47,46 @@ export default function NextAppDirEmotionCacheProvider(
     };
 
     return { cache, flush };
-  });
+  }, [options]);
 
-  useServerInsertedHTML((): React.JSX.Element | null => {
-    const inserted = registry.flush();
+  useServerInsertedHTML(() => {
+    const insertedStyles = registry.flush();
+    if (insertedStyles.length === 0) return null;
 
-    if (inserted.length === 0) {
-      return null;
-    }
+    const nonGlobals: string[] = [];
+    const globals: JSX.Element[] = [];
 
-    let styles = '';
     let dataEmotionAttribute = registry.cache.key;
-    const globals: { name: string; style: string }[] = [];
 
-    inserted.forEach(({ name, isGlobal }) => {
+    insertedStyles.forEach(({ name, isGlobal }) => {
       const style = registry.cache.inserted[name];
 
       if (typeof style === 'string') {
         if (isGlobal) {
-          globals.push({ name, style });
+          globals.push(
+            <style
+              key={name}
+              data-emotion={`${registry.cache.key}-global ${name}`}
+              dangerouslySetInnerHTML={{ __html: style }}
+            />
+          );
         } else {
-          styles += style;
+          nonGlobals.push(style);
           dataEmotionAttribute += ` ${name}`;
         }
       }
     });
 
     return (
-      <React.Fragment>
-        {globals.map(({ name, style }) => (
+      <>
+        {globals}
+        {nonGlobals.length > 0 && (
           <style
-            key={name}
-            dangerouslySetInnerHTML={{ __html: style }}
-            data-emotion={`${registry.cache.key}-global ${name}`}
-          />
-        ))}
-        {styles && (
-          <style
-            dangerouslySetInnerHTML={{ __html: styles }}
             data-emotion={dataEmotionAttribute}
+            dangerouslySetInnerHTML={{ __html: nonGlobals.join('') }}
           />
         )}
-      </React.Fragment>
+      </>
     );
   });
 
